@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+dist/
+syllabus/
+archive-syllabus-and-workshops/
+weekly-student-materials/
+student-materials/
