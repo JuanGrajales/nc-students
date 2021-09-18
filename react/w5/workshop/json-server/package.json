@@ -1,0 +1,13 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "`npm i -g json-server` `json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
