@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Promises, Fetch API, & CRUD</h1>
+    <script>
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      // fetch API allows us to make HTTP requests to a server from a web browser
+      let promise = fetch(url);
+      console.log(promise);
+      setTimeout(() => {
+        console.log(promise);
+      }, 1000);
+
+      // GET - used to retrieve data
+      //   fetch(url, {
+      //     method: "GET",
+      //   })
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       console.log("GET Success:", data);
+      //     })
+      //     .catch((error) => {
+      //       console.error("Error:", error);
+      //     });
+
+      // POST - used for creating a new data entry
+      //   url = "https://jsonplaceholder.typicode.com/posts";
+      //   fetch(url, {
+      //     method: "POST",
+      //     body: JSON.stringify({
+      //       title: "Test Title",
+      //       body: "Body",
+      //       userId: 1,
+      //     }),
+      //     headers: {
+      //       "Content-type": "application/json; charset=UTF-8",
+      //     },
+      //   })
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       console.log("POST Success:", data);
+      //     })
+      //     .catch((error) => {
+      //       console.error("Error:", error);
+      //     });
+
+      // PUT - used for updating data
+      //   url = "https://jsonplaceholder.typicode.com/posts/1";
+      //   fetch(url, {
+      //     method: "PUT",
+      //     body: JSON.stringify({
+      //       id: 1,
+      //       title: "foo",
+      //       body: "bar",
+      //       userId: 1,
+      //     }),
+      //     headers: {
+      //       "Content-type": "application/json; charset=UTF-8",
+      //     },
+      //   })
+      //     .then((response) => response.json())
+      //     .then((json) => {
+      //       console.log("PUT:", json);
+      //     })
+      //     .catch((error) => {
+      //       console.error("Error:", error);
+      //     });
+
+      // DELETE - delete one or more records
+      //   url = "https://jsonplaceholder.typicode.com/posts/1";
+      //   fetch(url, {
+      //     method: "DELETE",
+      //   })
+      //     .then((response) => response.json())
+      //     .then((json) => {
+      //       console.log("status: 200 Delete successful");
+      //     })
+      //     .catch((error) => {
+      //       console.error("Error:", error);
+      //     });
+    </script>
+  </body>
+</html>
