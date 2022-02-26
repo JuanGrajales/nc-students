@@ -21,7 +21,7 @@
 
 // We will focus on Objects
 // camelCamel
-let str = `Juan`;
+let str = "Juan";
 let num = 2.12345;
 
 // Object syntax
@@ -32,6 +32,14 @@ const objName = {
 
 // methods vs functions
 const obj2 = {
+  message: "hello",
+  msg2: "bonjour",
+  method1() {
+    console.log("this is a method");
+  },
+};
+
+const obj3 = {
   message: "hello",
   msg2: "bonjour",
   method1() {
@@ -81,10 +89,23 @@ const bicycle = {
   },
 };
 
-console.log(bicycle);
+// console.log(bicycle);
 
 // how do you change the color of the bike?
+bicycle.color = 'red'
 // console.log(bicycle);
 
 // how do you change the start method?
 // bicycle.start();
+bicycle.start = function (){
+  console.log("Rudy thinks it's like this")
+}
+// bicycle.start();
+
+
+let color = 'blue'
+color = 'red'
+
+// this will give a error
+const color1 = 'blue'
+color1 = 'red'

@@ -99,12 +99,13 @@ class Player {
   }
 }
 
-let p1 = new Player("Michael");
+let p1 = new Player("Michael", 100000);
 let p2 = new Player("Katherine");
 let p3 = new Player("Serena");
 let p4 = new Player("Kristen");
 
 // console.log(p1);
+// console.log(p2);
 // console.log(p2);
 // console.log(p3);
 // console.log(p4);
@@ -118,8 +119,12 @@ let p4 = new Player("Kristen");
 
 // inheritance
 class Vehicle {
-  constructor(type = "Car") {
+  constructor(type, p1, p2, p3) {
     this.type = type;
+    this.p1 = p1;
+    this.p2 = p2;
+    this.p3 = p3;
+    this.p4 = p4;
     this.motorCapacity = "2.4L";
   }
 
@@ -129,8 +134,8 @@ class Vehicle {
 }
 
 class Motorcycle extends Vehicle {
-  constructor(type = "motorcycle", numWheels = 2) {
-    super(type);
+  constructor(type, numWheels = 2) {
+    super(type, p1, p2, p3, p4);
     this.numWheels = numWheels;
   }
 
@@ -141,8 +146,8 @@ class Motorcycle extends Vehicle {
 
 let vehicle2 = new Vehicle();
 // vehicle2.getType();
-let bike = new Motorcycle();
-// bike.getType();
+let bike = new Motorcycle('Bike');
+bike.getType();
 
 // console.log(vehicle2);
-// console.log(bike);
+console.log(bike);

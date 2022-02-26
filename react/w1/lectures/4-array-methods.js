@@ -9,13 +9,30 @@ for (let i = 0; i < filterArr.length; i++) {
 
 // console.log(evenArr);
 
-let evenArr2 = filterArr.filter((number, index) => {
-  // console.log(`current Index: ${index} number: ${number}`);
-  return number % 2 === 0;
+let evenArr2 = filterArr.filter((number) => {
+  // console.log(number)
+
+  // return number === 1 || number === 2 || number === 4
+
+  if (number === 1 || number === 2 || number === 4) {
+    return true;
+  }
 });
 
+let evenNumbers = [];
+let oddNumbers = filterArr.filter((number) => {
+  if (number % 2 !== 0) {
+    // 2 % 2 = 0 || 1 % 2 = 1
+    return true;
+  } else {
+    evenNumbers.push(number);
+  }
+});
+
+// evenArr2 = [1]
 // console.log(filterArr);
-// console.log(evenArr2);
+// console.log(oddNumbers);
+// console.log(evenNumbers);
 
 let evenArr3 = filterArr.filter((number, index) => number % 2 === 0);
 
@@ -23,6 +40,7 @@ let evenArr3 = filterArr.filter((number, index) => number % 2 === 0);
 
 // map
 let mapArr = [1, 1, 1, 2, 2, 2];
+let namesArr = ["Prudence", "Ahmed", "Chen"];
 let doubleArr = [];
 for (let i = 0; i < mapArr.length; i++) {
   doubleArr.push(mapArr[i] * 2);
@@ -32,7 +50,12 @@ let doubleArr2 = mapArr.map((number) => {
   return number * 2;
 });
 
-// console.log(doubleArr);
+// let namesWithEmoji = namesArr.map((name) => name + "😄");
+let namesWithEmoji = namesArr.map((name) => {
+  return name + "😄"
+});
+
+// console.log(namesWithEmoji);
 // console.log(doubleArr2);
 
 // reduce
@@ -44,12 +67,12 @@ for (let i = 0; i < reduceArr.length; i++) {
 
 // console.log(sum);
 
-let sum2 = reduceArr.reduce((accum, curr, index) => {
-  console.log(`Index = ${index} accum = ${accum} curr = ${curr}`);
-  return accum + curr;
-}, 0);
+let sum2 = reduceArr.reduce((accumulator, currentValue, index) => {
+  console.log(`Index = ${index} accumulator = ${accumulator} currentValue = ${currentValue}`);
+  return accumulator + currentValue;
+}, 11);
 
-// console.log(sum2);
+console.log(sum2);
 // console.log(reduceArr);
 
 // array method that mutates original array?
