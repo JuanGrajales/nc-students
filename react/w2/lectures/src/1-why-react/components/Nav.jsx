@@ -13,6 +13,9 @@ const Nav = () => {
         <li>
           <a href="./thirdpage.html">Third Page</a>
         </li>
+        <li>
+          <a href="./thirdpage.html">Fourth Page</a>
+        </li>
       </ul>
     </nav>
   );
