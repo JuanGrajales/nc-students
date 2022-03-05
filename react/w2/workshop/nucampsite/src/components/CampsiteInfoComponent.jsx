@@ -18,28 +18,24 @@ class CampsiteInfoComponent extends Component {
 
   renderComments = (comments) => {
     if (comments) {
-      //   const displayComments = comments.map((comment) => {
-      //     return (
-      //       <div>
-      //         <p>{comment.text}</p>
-      //         -- {comment.author}, {comment.date}
-      //       </div>
-      //     );
-      //   });
       return (
         <div className="col-md-5 m-1">
           <h4>Comments</h4>
           {comments.map((comment) => {
             return (
               <div>
-                <p>{comment.text}</p>
-                -- {comment.author}, {comment.date}
+                <p>
+                  {comment.text} <br />
+                  -- {comment.author},{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                  }).format(new Date(Date.parse(comment.date)))}
+                </p>
               </div>
             );
           })}
-          {/* {displayComments} */}
-          {/* <p>{comments[0].text}</p>
-          -- {comments[0].author}, {comments[0].date} */}
         </div>
       );
     } else {
