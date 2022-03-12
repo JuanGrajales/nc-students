@@ -27,6 +27,9 @@ class Main extends Component {
     const HomePage = () => {
       return (
         <Home
+          // campsites={
+          //   this.state.campsites.filter((campsite) => campsite.featured)
+          // }
           campsite={
             this.state.campsites.filter((campsite) => campsite.featured)[0]
           }

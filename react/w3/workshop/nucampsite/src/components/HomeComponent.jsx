@@ -13,11 +13,26 @@ function RenderCard({ item }) {
   );
 }
 
+function RenderCards({ items }) {
+  return items.map((item) => {
+    return (
+      <Card>
+        <CardImg src={item.image} alt={item.name} />
+        <CardBody>
+          <CardTitle>{item.name}</CardTitle>
+          <CardText>{item.description}</CardText>
+        </CardBody>
+      </Card>
+    );
+  });
+}
+
 function Home(props) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-md m-1">
+          {/* <RenderCard items={props.campsites} /> */}
           <RenderCard item={props.campsite} />
         </div>
         <div className="col-md m-1">

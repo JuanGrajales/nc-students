@@ -10,7 +10,8 @@ import {
 import { Link } from "react-router-dom";
 
 // function RenderPartner(props) {
-function RenderPartner({ partner }) {
+// function RenderPartner({ partner }) {
+const RenderPartner = ({ partner }) => {
   if (partner) {
     return (
       <React.Fragment>
@@ -22,7 +23,7 @@ function RenderPartner({ partner }) {
       </React.Fragment>
     );
   }
-}
+};
 
 function About(props) {
   const partners = props.partners.map((partner) => {
