@@ -23,14 +23,14 @@ class RouterSetup extends Component {
         </ul>
         <h2>Switch will choose the route that has the path matching the url</h2>
         <Switch>
-          <Route path="/page" render={() => <Page1 />} />
+          {/* <Route path="/page" render={() => <Page1 />} />
           <Route path="/page/2" render={() => <Page2 />} />
           <Route path="/page/3" render={() => <Page3 />} />
+          <Route path="/" render={() => <NotFound />} /> */}
+          <Route exact path="/page" render={() => <Page1 />} />
+          <Route exact path="/page/2" render={() => <Page2 />} />
+          <Route exact path="/page/3" render={() => <Page3 />} />
           <Route path="/" render={() => <NotFound />} />
-          {/* <Route exact path="/page" render={() => <Page1 />} />
-            <Route exact path="/page/2" render={() => <Page2 />} />
-            <Route exact path="/page/3" render={() => <Page3 />} />
-            <Route exact path="/" render={() => <NotFound />} /> */}
         </Switch>
       </BrowserRouter>
     );

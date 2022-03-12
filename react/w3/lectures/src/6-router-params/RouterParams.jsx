@@ -8,6 +8,16 @@ class RouterParams extends Component {
   state = {
     users: ["juan", "jess", "jax", "roy"],
   };
+
+  displayUserLinks = () => {
+    return this.state.users.map((user) => {
+      return (
+        <li>
+          <Link to={`/profile/${user}`}>{user}'s Profile</Link>
+        </li>
+      );
+    });
+  };
   render() {
     return (
       <BrowserRouter>
@@ -17,7 +27,7 @@ class RouterParams extends Component {
           what the URL
         </p>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/juan">Juan Profile</Link>
           </li>
           <li>
@@ -25,13 +35,23 @@ class RouterParams extends Component {
           </li>
           <li>
             <Link to="/profile">Profile</Link>
-          </li>
+          </li> */}
+          {this.displayUserLinks()}
         </ul>
         <p>Switch will choose the route that has the path matching the url</p>
         <Switch>
-          <Route exact path="/juan" render={() => <Juan />} />
-          <Route exact path="/jess" render={() => <Jess />} />
-          <Route exact path="/profile" render={() => <Profile />} />
+          {/* <Route exact path="/juan" render={() => <Juan />} />
+          <Route exact path="/jess" render={() => <Jess />} /> */}
+          <Route
+            exact
+            path="/profile/:userName"
+            render={(props) => <Profile name="Juan" {...props} />}
+          />
+          {/* <Route
+            exact
+            path="/profile"
+            render={(props) => <Profile name="Juan" prop1={props.prop1} prop2={props.prop2} prop3={props.prop3}/>}
+          /> */}
         </Switch>
       </BrowserRouter>
     );

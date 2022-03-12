@@ -6,9 +6,9 @@
 // object destructuring
 
 let obj = {
-  fname: "Juan",
   age: 21,
   stack: "MERN",
+  fname: "Juan",
   obj2: {
     p1: "Jess",
   },
@@ -19,15 +19,19 @@ let {
   obj2: { p1 },
 } = obj;
 
-let fname = obj.fname;
-let age = obj.age;
-let stack = obj.stack;
+// let fname = obj.fname;
+// let age = obj.age;
+// let stack = obj.stack;
 
 // let { fname } = obj;
 // let { age } = obj;
 // let { stack } = obj;
 
 let { fname, age, stack } = obj;
+
+// array destructuring
+const arr = [1, 2, 3, 4];
+const [one, two, three, four] = arr;
 // console.log(fname, age, stack);
 
 // destructuring params of functions

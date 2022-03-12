@@ -1,9 +1,10 @@
 import React from "react";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div>
-      <h1>User Profile</h1>
+      <h1>{props.match.params.userName}'s Profile</h1>
+      {/* <p>{props.name}</p> */}
     </div>
   );
 };

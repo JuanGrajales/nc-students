@@ -7,7 +7,7 @@ class Parent extends Component {
       <div>
         <h1>Parent</h1>
         <p>How do we pass a data from parent component to child component</p>
-        <Child />
+        <Child name="Rudy" />
       </div>
     );
   }
