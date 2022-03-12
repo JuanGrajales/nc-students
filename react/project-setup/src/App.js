@@ -12,7 +12,7 @@ function App() {
       <h1>New Project</h1>
       <ul>
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/home/hi">Home</Link>
         </li>
         <li>
           <Link to="/about">about</Link>
@@ -25,7 +25,7 @@ function App() {
         </li>
       </ul>
       <Routes>
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home/:param1" element={<Home customProp="hi" />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/contact" element={<Contact />} />
