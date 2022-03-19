@@ -1,19 +1,24 @@
 import React from "react";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
   Card,
   CardImg,
   CardText,
   CardBody,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
   Label,
   Modal,
   ModalHeader,
   ModalBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import { LocalForm, Control } from "react-redux-form";
+import { Control, Errors, LocalForm } from "react-redux-form";
+
+const minLength = (length) => (value) => {
+  console.log(value);
+  return value && value.length >= length;
+};
 
 function RenderCampsite({ campsite }) {
   return (
@@ -42,6 +47,11 @@ class CommentForm extends React.Component {
   handleSubmit = (values) => {
     alert(JSON.stringify(values));
   };
+
+  // minLength = (length) => (value) => {
+  //   console.log(value);
+  //   return value && value.length >= length;
+  // };
 
   render() {
     return (
@@ -80,6 +90,18 @@ class CommentForm extends React.Component {
                   id="author"
                   className="form-control"
                   name="author"
+                  validators={{
+                    minLength: minLength(2),
+                  }}
+                />
+                <Errors
+                  model=".author"
+                  show="touched"
+                  component="div"
+                  className="text-danger"
+                  messages={{
+                    minLength: "Name must have at least 2 characters",
+                  }}
                 />
               </div>
               <div className="form-group">
