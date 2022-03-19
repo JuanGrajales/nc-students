@@ -7,11 +7,13 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  Label,
   Modal,
   ModalHeader,
   ModalBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { LocalForm, Control } from "react-redux-form";
 
 function RenderCampsite({ campsite }) {
   return (
@@ -28,13 +30,17 @@ function RenderCampsite({ campsite }) {
 
 class CommentForm extends React.Component {
   state = {
-    isModalOpen: false,
+    isModalOpen: true,
   };
 
   toggleModal = () => {
     this.setState({
       isModalOpen: !this.state.isModalOpen,
     });
+  };
+
+  handleSubmit = (values) => {
+    alert(JSON.stringify(values));
   };
 
   render() {
@@ -45,8 +51,53 @@ class CommentForm extends React.Component {
           Submit Comment
         </Button>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>Header</ModalHeader>
-          <ModalBody>Body</ModalBody>
+          <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+          <ModalBody>
+            {/* <LocalForm onSubmit={this.handleSubmit}> */}
+            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+              <div className="form-group">
+                <Label htmlFor="rating">Rating</Label>
+                <Control.select
+                  model=".rating"
+                  placeholder="Your Name"
+                  id="rating"
+                  className="form-control"
+                  name="rating"
+                  defaultValue="1"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Control.select>
+              </div>
+              <div className="form-group">
+                <Label htmlFor="author">Your Name</Label>
+                <Control.text
+                  model=".author"
+                  placeholder="Your Name"
+                  id="author"
+                  className="form-control"
+                  name="author"
+                />
+              </div>
+              <div className="form-group">
+                <Label htmlFor="text">Comment</Label>
+                <Control.textarea
+                  model=".text"
+                  placeholder="Your Comment"
+                  id="text"
+                  className="form-control"
+                  name="text"
+                  rows="7"
+                />
+              </div>
+              <Button type="submit" color="primary">
+                Submit
+              </Button>
+            </LocalForm>
+          </ModalBody>
         </Modal>
       </div>
     );
