@@ -6,6 +6,10 @@ import {
   CardBody,
   Breadcrumb,
   BreadcrumbItem,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -20,6 +24,33 @@ function RenderCampsite({ campsite }) {
       </Card>
     </div>
   );
+}
+
+class CommentForm extends React.Component {
+  state = {
+    isModalOpen: false,
+  };
+
+  toggleModal = () => {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Button outline onClick={this.toggleModal}>
+          <i className="fa fa-lg fa-pencil" />
+          Submit Comment
+        </Button>
+        <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+          <ModalHeader toggle={this.toggleModal}>Header</ModalHeader>
+          <ModalBody>Body</ModalBody>
+        </Modal>
+      </div>
+    );
+  }
 }
 
 function RenderComments({ comments }) {
@@ -43,6 +74,7 @@ function RenderComments({ comments }) {
             </div>
           );
         })}
+        <CommentForm />
       </div>
     );
   }
