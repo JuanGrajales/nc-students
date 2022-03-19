@@ -9,6 +9,10 @@ const SimpleForm = () => {
   // where does the data get saved as you type it?
   return (
     <div>
+      {/* <form onSubmit={function}>
+        <input type="text" name="" id="" />
+        <input type="radio" name="" id="" />
+      </form> */}
       <LocalForm onSubmit={(values) => handleSubmit(values)}>
         {/* modal prop must be present or else you will get an error */}
         {/* modal prop must have a period at the beginning */}

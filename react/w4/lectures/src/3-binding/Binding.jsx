@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 class Binding extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //     // This binding is necessary to make `this` work in the callback
-  //     // make a bad click good
-  //     this.badClick = this.badClick.bind(this);
-  //   }
+  // constructor(props) {
+  //   super(props);
+  //   // This binding is necessary to make `this` work in the callback
+  //   // make a bad click good
+  //   this.badClick = this.badClick.bind(this);
+  // }
 
   goodClick = () => {
     console.log(this);

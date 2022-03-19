@@ -10,6 +10,6 @@ user.email = "value 2";
 // console.log(user);
 
 // you can also add a property using a variable
-let userInput = "username";
+let userInput = "favColor";
 user[userInput] = "email";
-// console.log(user);
+console.log(user);

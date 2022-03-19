@@ -13,7 +13,7 @@ export const increment = (num = 1) => {
 };
 
 // reducers file
-export const counterReducer = (state = 10, action) => {
+export const counterReducer = (state = 11, action) => {
   console.log("counterReducer receives the action", action);
   switch (action.type) {
     case "INCREMENT":
@@ -21,6 +21,12 @@ export const counterReducer = (state = 10, action) => {
     default:
       return state;
   }
+
+  // if(action.type === 'INCREMENT') {
+  //   return state + action.payload
+  // } else {
+  //   state
+  // }
 };
 
 // store file

@@ -13,15 +13,15 @@ let str1 = "bbbbbbbye";
 // regex syntax: /pattern/optionalFlags
 
 // basic patern example
-let regex = /b/;
+let regex = /b/g;
 let str2 = "bbbbbbbye";
 // console.log(str2.replace(regex, "a"));
 
 // global and case flag example
 // what do the square brackets do?
-let regex2 = /[ebyc]/gi;
-let str3 = "BBbBbBbye";
-// console.log(str3.replace(regex2, "a"));
+let regex2 = /[a-z]/gi;
+let str3 = "BBbBbBbye56789";
+// console.log(str3.replace(regex2, ""));
 
 // ^ means it starts with
 // \d any digit from 0-9
@@ -29,7 +29,7 @@ let str3 = "BBbBbBbye";
 // $ ends with
 // put it all together: pattern starts with any digit from 0-9 and must end with a total of 1-6 digits
 let regex3 = /^\d{1,6}$/;
-let str4 = "123456";
+let str4 = "1234567";
 console.log(regex3.test(str4));
 
 // resources
