@@ -199,3 +199,37 @@ export const addPartners = (partners) => ({
   type: ActionTypes.ADD_PARTNERS,
   payload: partners,
 });
+
+export const postFeedback = (newFeedback) => (dispatch) => {
+  return fetch(baseUrl + "feedback", {
+    method: "POST",
+    body: JSON.stringify(newFeedback),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => {
+      console.log("succesfully submitted feedback", response);
+    })
+    .catch((error) => {
+      console.log("post feedback", error.message);
+      alert("Your feedback could not be posted\nError: " + error.message);
+    });
+};

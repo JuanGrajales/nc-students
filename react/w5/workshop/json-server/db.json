@@ -245,6 +245,16 @@
       "contactType": "Email",
       "message": "test",
       "date": "2019-10-25T13:30Z"
+    },
+    {
+      "firstName": "Juan",
+      "lastName": "Grajales",
+      "phoneNum": "1234567890",
+      "email": "stefan.culafic@ironhack.com",
+      "agree": false,
+      "contactType": "Phone",
+      "feedback": "asdfasdf",
+      "id": 1
     }
   ]
 }
