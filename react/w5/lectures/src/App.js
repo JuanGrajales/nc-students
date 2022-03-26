@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReduxIntro from "./1-redux/ReduxIntro";
-// import Fetch from "./3-react-fetch/Fetch";
+// import ReduxIntro from "./1-redux/ReduxIntro";
+import Fetch from "./3-react-fetch/Fetch";
 
 // Things to keep in mind
 // * 2 hours a day might not be possible for everyone, that's okay
@@ -21,8 +21,8 @@ class App extends Component {
     return (
       <div>
         <h1>Redux</h1>
-        <ReduxIntro />
-        {/* <Fetch /> */}
+        {/* <ReduxIntro /> */}
+        <Fetch />
       </div>
     );
   }

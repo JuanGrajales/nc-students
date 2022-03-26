@@ -14,6 +14,7 @@ const ReduxIntro = ({ counter, incrementCount }) => {
 
 const mapStateToProps = (state) => {
   return { ...state };
+  // return { counter: state.counter };
 };
 
 const mapDispatchToProps = (dispatch) => {
