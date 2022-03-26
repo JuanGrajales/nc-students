@@ -1,8 +1,3 @@
-// step 1 REMOVE
-// import { PARTNERS } from "../shared/partners";
-// step 1 REMOVE
-
-// step 2 ADD
 import * as ActionTypes from "./ActionTypes";
 
 export const Partners = (
@@ -23,6 +18,7 @@ export const Partners = (
 
     case ActionTypes.PARTNERS_FAILED:
       return { ...state, isLoading: false, errMess: action.payload };
+
     default:
       return state;
   }

@@ -11,7 +11,6 @@ import { connect } from "react-redux";
 import { actions } from "react-redux-form";
 import {
   postComment,
-  postFeedback,
   fetchCampsites,
   fetchComments,
   fetchPromotions,
@@ -31,7 +30,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   postComment: (campsiteId, rating, author, text) =>
     postComment(campsiteId, rating, author, text),
-  postFeedback: (feedback) => postFeedback(feedback),
   fetchCampsites: () => fetchCampsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
   fetchComments: () => fetchComments(),
@@ -65,13 +63,13 @@ class Main extends Component {
           }
           promotionLoading={this.props.promotions.isLoading}
           promotionErrMess={this.props.promotions.errMess}
+          partnerLoading={this.props.partners.isLoading}
+          partnerErrMess={this.props.partners.errMess}
           partner={
             this.props.partners.partners.filter(
               (partner) => partner.featured
             )[0]
           }
-          partnerLoading={this.props.partners.isLoading}
-          partnerErrMess={this.props.partners.errMess}
         />
       );
     };
@@ -116,10 +114,7 @@ class Main extends Component {
                 exact
                 path="/contactus"
                 render={() => (
-                  <Contact
-                    postFeedback={this.props.postFeedback}
-                    resetFeedbackForm={this.props.resetFeedbackForm}
-                  />
+                  <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
                 )}
               />
               <Route
